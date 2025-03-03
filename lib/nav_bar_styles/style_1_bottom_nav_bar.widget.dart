@@ -18,9 +18,16 @@ class _BottomNavStyle1 extends StatelessWidget {
               curve: navBarEssentials.itemAnimationProperties.curve,
               padding: EdgeInsets.all(item.contentPadding),
               decoration: BoxDecoration(
-                color: isSelected
-                    ? item.activeColorPrimary.withOpacity(0.2)
-                    : navBarEssentials.backgroundColor.withOpacity(0),
+                gradient: LinearGradient(
+                  begin:   AlignmentDirectional.centerStart,
+                  end:   AlignmentDirectional.centerEnd,
+                  colors: isSelected
+                      ? [const Color(0xFF1E9CE8), const Color(0xFF16DDFE)]
+                      : [
+                    const Color(0xffffffff),
+                         const Color(0xffffffff),
+                        ],
+                ),
                 borderRadius: const BorderRadius.all(Radius.circular(50)),
               ),
               child: Container(
